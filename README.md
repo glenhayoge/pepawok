@@ -2,14 +2,14 @@
 
 ## About the App
 
-The **PFD Digitization Application** is a custom web application built to streamline the creation and submission of Project Formulation Documents (PFDs) for new projects in Papua New Guinea. Developed for the Department of National Planning and Monitoring, it simplifies the traditionally complex PFD process through:
+The **PFD Digitization Application** is a custom web application built to simplify the creation and submission of Project Formulation Documents (PFDs) for new projects in Papua New Guinea. Developed for agencies and persons responsible for compiling and submitting PFD's to the Department of National Planning and Monitoring. The primary purpose is to simplify the traditionally complex PFD process through:
 
 - A step-by-step wizard interface  
 - Automated calculations  
 - Secure file uploads  
 - PDF and Word document generation  
 
-This tool ensures compliance with national policies, enhances data accuracy, and improves the overall user experience for government stakeholders at national, provincial, and district levels.
+This tool ensures compliance with national policies, enhances data accuracy and improves the overall user experience for government stakeholders at national, provincial, and district levels.
 
 ---
 
@@ -31,7 +31,7 @@ This tool ensures compliance with national policies, enhances data accuracy, and
 - AWS S3  
 
 **Hosting**  
-- Vercel  
+- Netlify 
 
 **Testing**  
 - Jest  
@@ -64,7 +64,7 @@ This tool ensures compliance with national policies, enhances data accuracy, and
 3. **Backend** – Setup PostgreSQL + Prisma, API routes, BetterAuth integration  
 4. **Frontend** – Built with Next.js, Shadcn UI, React Hook Form, document exports  
 5. **Testing** – Unit, integration, and E2E testing with Jest and Cypress  
-6. **Deployment** – CI/CD with GitHub Actions, deployed via Vercel  
+6. **Deployment** – CI/CD with GitHub Actions, deployed via Netlify 
 
 ---
 
@@ -92,7 +92,7 @@ This tool ensures compliance with national policies, enhances data accuracy, and
 
 ### Prerequisites
 
-- Node.js v16+  
+- Node.js v18+  
 - npm or yarn  
 - PostgreSQL (hosted or local)  
 - AWS S3 bucket  
@@ -164,5 +164,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Acknowledgements
 
-The Pepawok application was developed by [Glen Hayoge](https://github.com/glenhayoge) as part of the an effort to digitise and automate the PFD process in Papua New Guinea. It was built using the Next.js framework and the Shadcn UI design system.
+The Pepawok application was developed by [Glen Hayoge](https://github.com/glenhayoge) as part of an effort to help digitise and automate the PFD process in Papua New Guinea. It was built using the Next.js framework and the Shadcn UI design system.
 

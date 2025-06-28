@@ -72,7 +72,7 @@ This tool ensures compliance with national policies, enhances data accuracy and 
 
 - **User-Centric Design** – Simplified UX leads to greater adoption  
 - **Validation Matters** – Reduces data errors significantly  
-- **Scalability** – Serverless infra (Neon + Vercel) allows flexible scaling  
+- **Scalability** – Serverless infra (Neon + Netlify) allows flexible scaling  
 - **Security First** – RBAC and secure file storage are essential  
 - **Documentation** – Crucial for future maintenance and team onboarding  
 
@@ -164,5 +164,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Acknowledgements
 
-The Pepawok application was developed by [Glen Hayoge](https://github.com/glenhayoge) as part of an effort to help digitise and automate the PFD process in Papua New Guinea. It was built using the Next.js framework and the Shadcn UI design system.
+The Pepawok application was developed by [Glen Hayoge](https://glensea.com) as part of an effort to help digitise and automate the PFD process and other monotonous and complex processes in Papua New Guinea. It was built using the Next.js framework and the Shadcn UI design system.
 

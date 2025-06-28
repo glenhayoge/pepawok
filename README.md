@@ -1,36 +1,168 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pepawok - PFD Digitization Application
 
-## Getting Started
+## About the App
 
-First, run the development server:
+The **PFD Digitization Application** is a custom web application built to streamline the creation and submission of Project Formulation Documents (PFDs) for new projects in Papua New Guinea. Developed for the Department of National Planning and Monitoring, it simplifies the traditionally complex PFD process through:
+
+- A step-by-step wizard interface  
+- Automated calculations  
+- Secure file uploads  
+- PDF and Word document generation  
+
+This tool ensures compliance with national policies, enhances data accuracy, and improves the overall user experience for government stakeholders at national, provincial, and district levels.
+
+---
+
+## Tech Stack
+
+**Backend**  
+- PostgreSQL (hosted on [Neon](https://neon.tech))  
+- Prisma ORM  
+- Next.js API routes  
+- BetterAuth for authentication  
+
+**Frontend**  
+- Next.js (React with TypeScript)  
+- Shadcn UI  
+- React Hook Form  
+- `pdf-lib` and `docxtemplater` for document generation  
+
+**File Storage**  
+- AWS S3  
+
+**Hosting**  
+- Vercel  
+
+**Testing**  
+- Jest  
+- Cypress  
+
+**CI/CD**  
+- GitHub Actions  
+
+---
+
+## Key Features
+
+- **Step-by-Step Wizard** – Guides users through each PFD section  
+- **Dynamic Fields** – Conditional rendering based on user input  
+- **Real-Time Validation** – Ensures accurate completion of required fields  
+- **Automated Calculations** – Summarizes costs in the financial table  
+- **File Uploads** – Secure uploads for PDFs, DOCX with validation  
+- **Data Export** – Generate PFDs in PDF and Word formats  
+- **Admin Dashboard** – Manage submissions and export reports  
+- **Role-Based Access Control** – Roles for Submitter, Reviewer, Admin  
+- **Risk Management Plan** – Includes templates for risk analysis  
+- **Monitoring & Evaluation Tools** – Supports M&E workflows like quarterly and annual reviews  
+
+---
+
+## Build Process
+
+1. **Planning** – Broke down PFD forms into logical, user-friendly steps  
+2. **Design** – Wireframes for wizard and admin panel  
+3. **Backend** – Setup PostgreSQL + Prisma, API routes, BetterAuth integration  
+4. **Frontend** – Built with Next.js, Shadcn UI, React Hook Form, document exports  
+5. **Testing** – Unit, integration, and E2E testing with Jest and Cypress  
+6. **Deployment** – CI/CD with GitHub Actions, deployed via Vercel  
+
+---
+
+## Lessons Learned
+
+- **User-Centric Design** – Simplified UX leads to greater adoption  
+- **Validation Matters** – Reduces data errors significantly  
+- **Scalability** – Serverless infra (Neon + Vercel) allows flexible scaling  
+- **Security First** – RBAC and secure file storage are essential  
+- **Documentation** – Crucial for future maintenance and team onboarding  
+
+---
+
+## Areas for Improvement
+
+- Offline support for low-connectivity regions  
+- Mobile responsiveness  
+- Advanced reporting and analytics dashboards  
+- Multi-language support (localization)  
+- User-defined PFD templates for recurring projects  
+
+---
+
+## Setup Instructions
+
+### Prerequisites
+
+- Node.js v16+  
+- npm or yarn  
+- PostgreSQL (hosted or local)  
+- AWS S3 bucket  
+- Netlify account (for deployment)
+
+### Steps
+
+**Clone the Repository**
+
+```bash
+git clone https://github.com/glenhayoge/pepawok.git
+```
+
+**Install Dependencies**
+
+```bash
+npm install
+```
+
+**Create a .env.local file**
+
+```bash
+cp .env.local.example .env.local
+```
+
+**Update the .env.local file with your environment variables**
+
+```bash
+NEON_API_KEY=your-neon-api-key
+AWS_ACCESS_KEY_ID=your-aws-access-key-id
+AWS_SECRET_ACCESS_KEY=your-aws-secret-access-key
+AWS_S3_BUCKET=your-aws-s3-bucket
+```
+
+**Start the Development Server**
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Open the Application in Your Browser**    
+http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deployment
 
-## Learn More
+To deploy the application, follow these steps:
 
-To learn more about Next.js, take a look at the following resources:
+1. Create a new repository on GitHub and clone it to your local machine.
+2. Install the necessary dependencies by running `npm install` in the project directory.
+3. Create a `.env.local` file and add your environment variables.
+4. Run `npm run build` to build the application.
+5. Deploy the contents of the `out` directory to your hosting provider.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Contributing
 
-## Deploy on Vercel
+Contributions are welcome! If you find a bug or have a suggestion, please open an issue or submit a pull request.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+## Acknowledgements
+
+The Pepawok application was developed by [Glen Hayoge](https://github.com/glenhayoge) as part of the an effort to digitise and automate the PFD process in Papua New Guinea. It was built using the Next.js framework and the Shadcn UI design system.
+

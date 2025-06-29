@@ -1,0 +1,63 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String    @id @default(uuid())
+  email     String    @unique
+  password  String
+  role      Role      @default(SUBMITTER)
+  agency    String?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+enum Role {
+  SUBMITTER
+  REVIEWER
+  ADMIN
+}
+
+model Submission {
+  id          String     @id @default(uuid())
+  userId      String
+  user        User       @relation(fields: [userId], references: [id])
+  status      Status     @default(DRAFT)
+  formData    Json       // Stores all PFD sections
+  attachments Attachment[]
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+}
+
+model Attachment {
+  id            String     @id @default(uuid())
+  submissionId  String
+  submission    Submission @relation(fields: [submissionId], references: [id])
+  type          AttachmentType
+  key           String     // S3 object key
+  name          String
+  size          Int
+  createdAt     DateTime   @default(now())
+}
+
+enum AttachmentType {
+  LOG_FRAME
+  RISK_MANAGEMENT
+  FINANCIAL_ANALYSIS
+  IMPLEMENTATION_SCHEDULE
+  COST_SCHEDULE
+  OPERATIONAL_EXPENDITURE
+}
+
+enum Status {
+  DRAFT
+  SUBMITTED
+  APPROVED
+  REJECTED
+}
